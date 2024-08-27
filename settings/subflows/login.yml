@@ -1,0 +1,10 @@
+appId: com.media4care.family
+---
+- clearState  
+- launchApp
+- tapOn: Email Address
+- inputText: tulioatx431@gmail.com
+- tapOn: Password
+- inputText: ${MAESTRO_PASSWORD}
+- tapOn: Login
+- tapOn: Skip

@@ -1,0 +1,25 @@
+# flow.yaml
+appId: com.media4care.family
+tags: 
+  - regression
+---
+- runFlow: subflows/login.yml
+- runScript: ../scripts/utils.js
+- tapOn: Settings
+- tapOn:
+    text: Families
+    index: 1
+- tapOn:
+    text: Familiengruppe
+    index: 1
+- tapOn:
+    point: 93%,55%
+- tapOn: Email Address
+- inputText: ${output.email}
+- tapOn: Send invitation
+- assertVisible:
+    text: Invitation was sent.
+    index: 1
+- assertVisible:
+    text: ${output.email}
+    index: 1
