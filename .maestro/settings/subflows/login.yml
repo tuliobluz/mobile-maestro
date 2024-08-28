@@ -1,3 +1,5 @@
+# Login.yaml
+
 appId: com.media4care.family
 ---
 - clearState  
@@ -7,4 +9,7 @@ appId: com.media4care.family
 - tapOn: Password
 - inputText: ${MAESTRO_PASSWORD}
 - tapOn: Login
-- tapOn: Skip
+- runFlow:
+    when:
+      visible: Skip
+    file: skip.yml

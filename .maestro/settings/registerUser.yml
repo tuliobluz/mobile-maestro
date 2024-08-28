@@ -1,0 +1,39 @@
+# Create a email service to be able to fetch emails.
+# Generate a email on the email service.
+# Before executing this test, initiate an Invitation API call from the senior.
+# Use the email service to retrieve the generated email, then extract the generated password.
+# Store the extracted email and password as environment variables 
+# (MAESTRO_NEW_EMAIL and MAESTRO_NEW_PASSWORD)
+# After that we could use the MAESTRO_NEW_EMAIL and MAESTRO_NEW_PASSOWORD on this scenario
+# Ensure that the email and password are logged to debug any issue found
+
+# Example of email service to be used: https://github.com/mailhog/MailHog
+
+# Anyway I create the scenario and will not work
+
+# registerUser.yaml
+
+appId: com.media4care.family
+---
+- clearState  
+- launchApp
+- runScript: ../scripts/utils.js
+- tapOn: Email Address
+- inputText: ${MAESTRO_NEW_EMAIL}
+- tapOn: Password
+- inputText: ${MAESTRO_NEW_PASSOWORD}
+- tapOn: Login
+- tapOn: Name
+- inputText: ${output.credentials.username}
+- tapOn: Password
+- inputText: ${output.credentials.password}
+# We should log this new ${output.credentials.password} too to be able to debug
+- tapOn: Please accept our Terms
+- tapOn: Complete Registration
+- runFlow: subflows/skip.yml
+- assertVisible:
+    text: Start
+    index: 1
+- assertVisible:
+    text: Familiengruppe
+    index: 1

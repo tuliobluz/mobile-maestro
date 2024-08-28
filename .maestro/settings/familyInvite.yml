@@ -1,4 +1,4 @@
-# flow.yaml
+# familyInvite.yaml
 appId: com.media4care.family
 tags: 
   - regression
@@ -13,13 +13,16 @@ tags:
     text: Familiengruppe
     index: 1
 - tapOn:
-    point: 93%,55%
+    point: 93%,57%
 - tapOn: Email Address
-- inputText: ${output.email}
+- inputText: ${output.credentials.email}
 - tapOn: Send invitation
 - assertVisible:
     text: Invitation was sent.
     index: 1
+- scrollUntilVisible:
+    element: ${output.credentials.email}
+    direction: DOWN
 - assertVisible:
-    text: ${output.email}
+    text: ${output.credentials.email}
     index: 1

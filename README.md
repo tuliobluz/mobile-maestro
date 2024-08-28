@@ -25,7 +25,7 @@ The folder structure of the project:
 
 ## Config file
 
-- timeout: 15 seconds
+- timeout: 8 seconds
 - retries: 2 times when it fails
 
 # How to Run
@@ -50,11 +50,23 @@ Export the environmental variables `MAESTRO_EMAIL` and `MAESTRO_PASSWORD` to log
 
 ## Running with windows
 
-- `maestro --host YOUR_IPV4 --device emulator-5554 studio` Launch the [maestro studio](https://maestro.mobile.dev/getting-started/maestro-studio) against the emulator device
-
 - `maestro --host YOUR_IPV4 --device emulator-5554 test .maestro/settings/familyInvite.yml` Run specific file(familyInvite.yml)
 
 - `maestro --host YOUR_IPV4 --device emulator-5554 test .maestro` runs all tests
+
+## Maestro Studio
+
+Your personal assistant to help write your Maestro Flows. Use Maestro Studio to instantly discover the exact commands needed to interact with your app.
+
+### General
+
+- `maestro studio` 
+
+### Windows
+
+- `maestro --host YOUR_IPV4 --device emulator-5554 studio` Launch the [maestro studio](https://maestro.mobile.dev/getting-started/maestro-studio) against the emulator device
+
+
 
 ### Troubleshooting
 
