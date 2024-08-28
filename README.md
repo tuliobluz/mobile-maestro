@@ -15,13 +15,14 @@ All the documentation will be explained to run in Windows, as my personal comput
 
 The folder structure of the project:
 
-* `.github`: maestro root folder
-* `.maestro`: contains the page objects to be used on the spec tests
+* `.github`: github templates
+* `.maestro`: maestro root folder
     * `scripts`: contains helper functions.
     * `settings`: contains the specifications for the settings feature.
         * `subflows`: It's common to have some Flow files that are only meant to be executed as part of another Flow via the runFlow command. 
         * `familyInvite.yml`: Specification to test family invitations
 * `config.yml`: is used to define the configuration settings for running mobile UI tests. 
+* `env.sh`: template for the environment variables need for the tests
 
 ## Config file
 
@@ -60,13 +61,24 @@ Your personal assistant to help write your Maestro Flows. Use Maestro Studio to 
 
 ### General
 
-- `maestro studio` 
+- `maestro studio` open [maestro studio](https://maestro.mobile.dev/getting-started/maestro-studio)
 
 ### Windows
 
 - `maestro --host YOUR_IPV4 --device emulator-5554 studio` Launch the [maestro studio](https://maestro.mobile.dev/getting-started/maestro-studio) against the emulator device
 
 
+## Maestro Report
+
+Maestro can run a suite of tests and generate a test report at the end.
+
+### General
+
+- `maestro test --format junit myFolderWithTests/` To generate a xml report
+
+### Windows
+
+- ` maestro --host YOUR_IPV4  --device emulator-5554 test --format junit .maestro/settings/familyInvite.yml` To generate a  xml report
 
 ### Troubleshooting
 
