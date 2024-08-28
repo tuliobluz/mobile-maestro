@@ -1,0 +1,5 @@
+# config.yaml
+flows:
+  - settings/*
+timeout: 15 # in seconds
+retries: 2
